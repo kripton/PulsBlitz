@@ -22,6 +22,7 @@ I wanted to have a open protocol that suits realtime-control data really well bu
 * The transmitter can announce that the up-coming time slot is to be used by a certain, announced receiver. This way, a small back-channels exists for values such as battery level, packet loss rate, sensor values, ... However, this does not make it a multi-directional or multi-sender realtime protocol
 * Encryption is optional and can be configured per payload channel
 * Snappy compression is required to be implemented on all nodes. The size savings might not be huge but calculation complexity and increase in latency is usually so low that it's worth it. However, the usage of compression can vary from packet to packet. The transmitter decides if compression makes sense for that packet or not
+* The protocol is not really meant for rate-limited sending. It might work in case no realtime-data is sent and nodes are just discovered and queried but for most applications, use a frequency band with no duty-cycle limitations
 
 ## Packet layout
 
